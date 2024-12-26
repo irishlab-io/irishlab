@@ -9,7 +9,7 @@ services:
 
   vpn:
     container_name: vpn
-    image: docker.io/qmcgaw/gluetun:v3.39.1
+    image: docker.io/qmcgaw/gluetun:v3.40.0
     cap_add:
       - NET_ADMIN
     networks:
