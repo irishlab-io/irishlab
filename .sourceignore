@@ -9,6 +9,4 @@ spec:
     /*
 
     # Include manifest directories
-    !/k8s/apps/
-    !/k8s/clusters/
-    !/k8s/infrastructure/
+    !/k8s/
