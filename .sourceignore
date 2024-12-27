@@ -2,13 +2,13 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: <repository-name>
+  name: irishlab.io
 spec:
   ignore: |
-    # exclude all
+    # Exclude all
     /*
-    # include deploy dir
-    !/deploy
-    # exclude file extensions from deploy dir
-    /deploy/**/*.md
-    /deploy/**/*.txt
+
+    # Include manifest directories
+    !/k8s/apps/
+    !/k8s/clusters/
+    !/k8s/infrastructure/
