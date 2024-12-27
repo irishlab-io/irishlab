@@ -1,0 +1,103 @@
+---
+version: "3"
+
+vars:
+  K8S_VERSION: rancher/k3s:v1.31.4-k3s1
+
+tasks:
+  install-prerequisites:
+    desc: Install prerequisites (docker, kubectl, flux, k3d)
+    preconditions:
+      - sh: command -v brew
+        msg: Homebrew is required but it's not installed. Aborting.
+    cmds:
+      - apt install docker kubernetes-cli fluxcd/tap/flux k3d
+    silent: true
+
+  k8s:create-dev-cluster:
+    desc: Create a local k3s cluster (dev-cluster)
+    cmds:
+      - >-
+        k3d cluster create dev-cluster
+        --image "{{.K8S_VERSION}}"
+        --servers 1
+        --port "8080:80@loadbalancer"
+        --k3s-arg '--disable-cloud-controller@server:0'
+        --k3s-arg '--disable-network-policy@server:0'
+        --k3s-arg '--disable=traefik@server:0'
+        --k3s-arg '--flannel-backend=none@server:0'
+        --volume "$(pwd)/k8s/infrastructure/calico/calico.yaml:/var/lib/rancher/k3s/server/manifests/calico.yaml"
+        --wait
+    silent: true
+
+  k8s:use-local-k3s-context:
+    desc: Use the local k3s cluster (dev1-cluster) context
+    cmds:
+      - kubectl config use-context k3d-dev-cluster
+    silent: true
+
+  k8s:delete-dev-cluster:
+    desc: Delete local k3s cluster (dev-cluster)
+    cmds:
+      - k3d cluster delete dev-cluster
+    silent: true
+
+  k8s:verify-calico:
+    deps: [k8s:use-local-k3s-context]
+    desc: Verify that calico controller is deployed to local k3s cluster (cluster-1)
+    cmds:
+      - watch kubectl -n kube-system get deployments/calico-kube-controllers
+    silent: true
+
+  flux:check-prerequisites:
+    deps: [k8s:use-local-k3s-context]
+    desc: Run flux pre check against the local k3s cluster (cluster-1)
+    cmds:
+      - flux check --pre
+    silent: true
+
+  flux:bootstrap-dev-cluster:
+    deps: [k8s:use-local-k3s-context]
+    desc: Bootstrap flux to local k3s cluster (cluster-1)
+    cmds:
+      - >-
+        flux bootstrap github
+        --context=k3d-dev-cluster
+        --owner=${GITHUB_USER}
+        --repository=${GITHUB_REPO}
+        --branch=main
+        --personal=true
+        --private=false
+        --network-policy=false
+        --path=clusters/dev
+    silent: true
+
+  flux:reconcile:
+    deps: [k8s:use-local-k3s-context]
+    desc: Trigger a sync of the flux-system and apply changes to local k3s cluster (cluster-1)
+    cmds:
+      - flux reconcile kustomization flux-system --with-source
+
+  flux:get-helmreleases:
+    deps: [k8s:use-local-k3s-context]
+    desc: List all Helm releases and their status in local k3s cluster (cluster-1)
+    cmds:
+      - flux get helmreleases -A
+
+  flux:get-kustomizations:
+    deps: [k8s:use-local-k3s-context]
+    desc: List all kustomizations and their status in local k3s cluster (cluster-1)
+    cmds:
+      - flux get kustomization -A
+
+  flux:get-helmrepositories:
+    deps: [k8s:use-local-k3s-context]
+    desc: List all Helm repositories and their status in local k3s cluster (cluster-1)
+    cmds:
+      - flux get sources helm -A
+
+  flux:get-gitrepositories:
+    deps: [k8s:use-local-k3s-context]
+    desc: List all Git repositories and their status in local k3s cluster (cluster-1)
+    cmds:
+      - flux get sources git -A
