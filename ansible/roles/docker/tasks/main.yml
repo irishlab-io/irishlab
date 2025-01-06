@@ -5,3 +5,5 @@
   ansible.builtin.include_tasks: docker.yml
 - name: Configure user
   ansible.builtin.include_tasks: user.yml
+- name: Prune system
+  ansible.builtin.include_tasks: prune.yml
