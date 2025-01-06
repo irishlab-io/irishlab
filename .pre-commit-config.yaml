@@ -73,17 +73,17 @@ repos:
           - --config
           - .config/.markdown-lint.yml
         stages: [pre-commit]
-  # - repo: https://github.com/adrienverge/yamllint
-  #   rev: v1.35.1
-  #   hooks:
-  #     - id: yamllint
-  #       exclude: ^k8s/cluster/(dev|prod|staging)/flux-system
-  #       args:
-  #         - -c
-  #         - .config/.yaml-lint.yml
-  #       stages: [pre-commit]
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        exclude: ^k8s/cluster/(dev|prod|staging)/flux-system
+        args:
+          - -c
+          - .config/.yaml-lint.yml
+        stages: [pre-commit]
   - repo: https://github.com/rhysd/actionlint
-    rev: v1.7.4
+    rev: v1.7.6
     hooks:
       - id: actionlint
         stages: [pre-push]
@@ -97,8 +97,8 @@ repos:
           - .config/.ansible-lint.yml
           - --fix
         stages: [pre-commit]
-  # - repo: https://github.com/tarioch/flux-check-hook
-  #   rev: v0.7.0
-  #   hooks:
-  #     - id: check-flux-helm-values
-  #       stages: [pre-commit]
+  - repo: https://github.com/tarioch/flux-check-hook
+    rev: v0.7.0
+    hooks:
+      - id: check-flux-helm-values
+        stages: [pre-commit]
