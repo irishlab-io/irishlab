@@ -30,5 +30,18 @@
     "fileMatch": [
       "(^|/)terraform/.+\\.ya?ml(?:\\.j2)?$"
     ]
-  }
+  },
+  "packageRules": [
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackageNames": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    }
+  ]
 }
