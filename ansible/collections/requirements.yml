@@ -7,10 +7,10 @@ collections:
   - name: bitwarden.secrets
     version: 1.0.1
   - name: community.docker
-    version: 4.2.0
+    version: 4.4.0
   - name: community.general
-    version: 10.1.0
+    version: 10.4.0
   - name: community.sops
-    version: 2.0.0
+    version: 2.0.2
   - name: kubernetes.core
-    version: 5.0.0
+    version: 5.1.0
