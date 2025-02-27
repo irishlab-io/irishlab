@@ -1,92 +1,359 @@
+#  Edit the `/etc/kvmd/override.yaml` file and include the following:
 kvmd:
+    atx:
+        type: disabled
     gpio:
         drivers:
+            reboot:
+                type: cmd
+                cmd: [/usr/bin/sudo, reboot]
+            restart_service:
+                type: cmd
+                cmd: [/usr/bin/sudo, systemctl, restart, kvmd]
             tes:
                 type: tesmart
-                host: {{ pikvm_tesmart_kvm_addr }}
-                port: {{ pikvm_tesmart_kvm_port }}
+                host: 192.168.1.10
+                port: 5000
+            server00_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server01_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server02_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server03_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server04_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server05_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server06_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server07_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server08_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server09_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server10_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server11_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server12_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server13_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server14_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
+            server15_wol:
+                type: wol
+                mac: ff:ff:ff:ff:ff:ff
+                ip: 192.168.10.2
+                port: 9
         scheme:
-            server0_led:
-                driver: tes
-                pin: 0
-                mode: input
-            server0_switch:
-                driver: tes
+            server00_wol:
+                driver: server00_wol
                 pin: 0
                 mode: output
                 switch: false
-            server1_led:
+            server00_led:
+                driver: tes
+                pin: 0
+                mode: input
+            server00_switch:
+                driver: tes
+                pin: 0
+                mode: output
+                switch: false
+            server01_wol:
+                driver: server01_wol
+                pin: 0
+                mode: output
+                switch: false
+            server01_led:
                 driver: tes
                 pin: 1
                 mode: input
-            server1_switch:
+            server01_switch:
                 driver: tes
                 pin: 1
                 mode: output
                 switch: false
-            server2_led:
+            server02_wol:
+                driver: server02_wol
+                pin: 0
+                mode: output
+                switch: false
+            server02_led:
                 driver: tes
                 pin: 2
                 mode: input
-            server2_switch:
+            server02_switch:
                 driver: tes
                 pin: 2
                 mode: output
                 switch: false
-            server3_led:
+            server03_wol:
+                driver: server03_wol
+                pin: 0
+                mode: output
+                switch: false
+            server03_led:
                 driver: tes
                 pin: 3
                 mode: input
-            server3_switch:
+            server03_switch:
                 driver: tes
                 pin: 3
                 mode: output
                 switch: false
-            server4_led:
+            server04_wol:
+                driver: server04_wol
+                pin: 0
+                mode: output
+                switch: false
+            server04_led:
                 driver: tes
                 pin: 4
                 mode: input
-            server4_switch:
+            server04_switch:
                 driver: tes
                 pin: 4
                 mode: output
                 switch: false
-            server5_led:
+            server05_wol:
+                driver: server05_wol
+                pin: 0
+                mode: output
+                switch: false
+            server05_led:
                 driver: tes
                 pin: 5
                 mode: input
-            server5_switch:
+            server05_switch:
                 driver: tes
                 pin: 5
                 mode: output
                 switch: false
-            server6_led:
+            server06_wol:
+                driver: server06_wol
+                pin: 0
+                mode: output
+                switch: false
+            server06_led:
                 driver: tes
                 pin: 6
                 mode: input
-            server6_switch:
+            server06_switch:
                 driver: tes
                 pin: 6
                 mode: output
                 switch: false
-            server7_led:
+            server07_wol:
+                driver: server07_wol
+                pin: 0
+                mode: output
+                switch: false
+            server07_led:
                 driver: tes
                 pin: 7
                 mode: input
-            server7_switch:
+            server07_switch:
                 driver: tes
                 pin: 7
+                mode: output
+                switch: false
+            server08_wol:
+                driver: server08_wol
+                pin: 0
+                mode: output
+                switch: false
+            server08_led:
+                driver: tes
+                pin: 8
+                mode: input
+            server08_switch:
+                driver: tes
+                pin: 8
+                mode: output
+                switch: false
+            server09_wol:
+                driver: server09_wol
+                pin: 0
+                mode: output
+                switch: false
+            server09_led:
+                driver: tes
+                pin: 9
+                mode: input
+            server09_switch:
+                driver: tes
+                pin: 9
+                mode: output
+                switch: false
+            server10_wol:
+                driver: server10_wol
+                pin: 0
+                mode: output
+                switch: false
+            server10_led:
+                driver: tes
+                pin: 10
+                mode: input
+            server10_switch:
+                driver: tes
+                pin: 10
+                mode: output
+                switch: false
+            server11_wol:
+                driver: server11_wol
+                pin: 0
+                mode: output
+                switch: false
+            server11_led:
+                driver: tes
+                pin: 11
+                mode: input
+            server11_switch:
+                driver: tes
+                pin: 11
+                mode: output
+                switch: false
+            server12_wol:
+                driver: server12_wol
+                pin: 0
+                mode: output
+                switch: false
+            server12_led:
+                driver: tes
+                pin: 12
+                mode: input
+            server12_switch:
+                driver: tes
+                pin: 12
+                mode: output
+                switch: false
+            server13_wol:
+                driver: server13_wol
+                pin: 0
+                mode: output
+                switch: false
+            server13_led:
+                driver: tes
+                pin: 13
+                mode: input
+            server13_switch:
+                driver: tes
+                pin: 13
+                mode: output
+                switch: false
+            server14_led:
+                driver: tes
+                pin: 14
+                mode: input
+            server14_wol:
+                driver: server14_wol
+                pin: 0
+                mode: output
+                switch: false
+            server14_switch:
+                driver: tes
+                pin: 14
+                mode: output
+                switch: false
+            server15_wol:
+                driver: server15_wol
+                pin: 0
+                mode: output
+                switch: false
+            server15_led:
+                driver: tes
+                pin: 15
+                mode: input
+            server15_switch:
+                driver: tes
+                pin: 15
+                mode: output
+                switch: false
+            pikvm_led:
+                pin: 0
+                mode: input
+            reboot_button:
+                driver: reboot
+                pin: 0
+                mode: output
+                switch: false
+            restart_service_button:
+                driver: restart_service
+                pin: 0
                 mode: output
                 switch: false
         view:
             table:
                 - ["TESMART Switch"]
                 - []
-                - ["#zeus", server0_led, server0_switch|Switch]
-                - ["#iris", server1_led, server1_switch|Switch]
-                - ["#poseidon", server2_led, server2_switch|Switch]
-                - ["#helios", server3_led, server3_switch|Switch]
-                - ["#eos", server4_led, server4_switch|Switch]
-                - ["#hades", server5_led, server5_switch|Switch]
-                - ["#empty", server6_led, server6_switch|Switch]
-                - ["#atlas", server7_led, server7_switch|Switch]
+                - ["#pikvm-1", "pikvm_led|green", "restart_service_button|confirm|Service", "reboot_button|confirm|Reboot"]
+                - ["#pvt-1", server00_led, server00_switch|Switch, "server00_wol|confirm|WOL"]
+                - ["#pvt-2", server01_led, server01_switch|Switch, "server01_wol|confirm|WOL"]
+                - ["#pvt-3", server02_led, server02_switch|Switch, "server02_wol|confirm|WOL"]
+                - ["#server-03", server03_led, server03_switch|Switch]
+                - ["#server-04", server04_led, server04_switch|Switch]
+                - ["#server-05", server05_led, server05_switch|Switch]
+                - ["#server-06", server06_led, server06_switch|Switch]
+                - ["#server-07", server07_led, server07_switch|Switch]
+                - ["#server-08", server08_led, server08_switch|Switch]
+                - ["#server-09", server09_led, server09_switch|Switch]
+                - ["#server-10", server10_led, server10_switch|Switch]
+                - ["#server-11", server11_led, server11_switch|Switch]
+                - ["#server-12", server12_led, server12_switch|Switch]
+                - ["#server-13", server13_led, server13_switch|Switch]
+                - ["#server-14", server14_led, server14_switch|Switch]
+                - ["#pve-2", server15_led, server15_switch|Switch, "server15_wol|confirm|WOL"]
+watchdog:
+    interval: 30
+    rtc: 0
+    timeout: 300
