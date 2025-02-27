@@ -1,0 +1,17 @@
+---
+- name: Start/Update pihole container
+  docker_container:
+    name: pihole
+    image: "{{ pihole_image }}"
+    pull: true
+    restart_policy: unless-stopped
+    env:
+      TZ: "{{ timezone }}"
+      WEBPASSWORD: "{{ pihole_webpassword }}"
+      PIHOLE_DNS_: "{{ pihole_dns }}"
+      ServerIP: "{{ pihole_ip }}"
+      hostname: "pi.hole"
+    network_mode: host
+    volumes:
+      - "/home/{{ ansible_user }}/pihole/pihole/:/etc/pihole/"
+      - "/home/{{ ansible_user }}/pihole/dnsmasq.d/:/etc/dnsmasq.d/"

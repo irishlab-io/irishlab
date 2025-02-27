@@ -3,6 +3,8 @@ ansible_python_interpreter: /usr/bin/python3
 ansible_ssh_port: 22
 ansible_ssh_common_args: -o StrictHostKeyChecking=no
 
+bws_access_token: "{{ lookup('env', 'BWS_ACCESS_TOKEN') }}"
+
 setup_github_ssh_keys: https://github.com/irish1986.keys
 setup_public_ssh_keys: ""
 
