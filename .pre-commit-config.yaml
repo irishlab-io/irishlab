@@ -8,12 +8,12 @@ ci:
     - ggshield
 repos:
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.2.2
+    rev: v4.6.1
     hooks:
       - id: commitizen
         stages: [commit-msg]
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.36.0
+    rev: v1.39.0
     hooks:
       - id: ggshield
         language_version: python3
@@ -74,7 +74,7 @@ repos:
           - .config/.markdown-lint.yml
         stages: [pre-commit]
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.35.1
+    rev: v1.37.1
     hooks:
       - id: yamllint
         exclude: ^k8s/cluster/(dev|prod|staging)/flux-system
@@ -88,7 +88,7 @@ repos:
       - id: actionlint
         stages: [pre-push]
   - repo: https://github.com/ansible-community/ansible-lint
-    rev: v25.1.3
+    rev: v25.4.0
     hooks:
       - id: ansible-lint
         files: \.(yaml|yml)$
