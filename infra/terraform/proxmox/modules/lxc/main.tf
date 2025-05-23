@@ -6,19 +6,19 @@ terraform {
     }
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "4.20.0"
+      version = "4.30.0"
     }
     random = {
       source  = "hashicorp/random"
-      version = "3.7.1"
+      version = "3.7.2"
     }
     vault = {
       source  = "hashicorp/vault"
-      version = "4.6.0"
+      version = "4.8.0"
     }
     dns = {
       source  = "hashicorp/dns"
-      version = "3.4.2"
+      version = "3.4.3"
     }
   }
 }

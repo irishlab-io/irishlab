@@ -7,7 +7,7 @@ networks:
 
 services:
   whoami:
-    image: docker.io/traefik/whoami:v1.10
+    image: docker.io/traefik/whoami:v1.11
     pull_policy: always
     container_name: whoami
     restart: unless-stopped
