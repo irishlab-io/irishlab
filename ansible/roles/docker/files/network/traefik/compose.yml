@@ -6,7 +6,7 @@ networks: # docker network create proxy
 
 services:
   traefik:
-    image: traefik:v3.3
+    image: traefik:v3.4
     container_name: traefik
     restart: unless-stopped
     security_opt:
