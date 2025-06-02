@@ -1,9 +1,0 @@
-{{- if hugo.IsServer -}}
-<!-- only production, not generate google-site-verification with Hugo's built-in server -->
-{{- else -}}
-{{- if .IsHome -}}
-{{- with .Site.Params.google_site_verification -}}
-<meta name="google-site-verification" content="{{ . }}">
-{{- end -}}
-{{- end -}}
-{{- end -}}
