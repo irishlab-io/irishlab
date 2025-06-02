@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on irishlab.io</title>
+    <link>http://localhost:1313/network/</link>
+    <description>Recent content in Network on irishlab.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Oct 2017 14:00:45 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Internet Service Provider</title>
+      <link>http://localhost:1313/network/isp/</link>
+      <pubDate>Tue, 17 Oct 2017 14:00:45 +0000</pubDate>
+      <guid>http://localhost:1313/network/isp/</guid>
+      <description>aaaaaa&#xA;vvvv&#xA;aaa</description>
+    </item>
+  </channel>
+</rss>

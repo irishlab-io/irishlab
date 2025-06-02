@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Services on irishlab.io</title>
+    <link>http://localhost:1313/services/</link>
+    <description>Recent content in Services on irishlab.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 15:26:15 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fail2Ban</title>
+      <link>http://localhost:1313/services/fail2ban/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/fail2ban/</guid>
+      <description>Fail2Ban Manual Installation Automated Installation Ansible roles ansible-playbook fail2ban.yml -K Testing it </description>
+    </item>
+    <item>
+      <title>Keepalived</title>
+      <link>http://localhost:1313/services/keepalived/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/keepalived/</guid>
+      <description>Keepalived Keepalived is designed to run on two separate hosts but share a virtual IP address. This ensures that if one goes down (the master), the backup will take over using the same virtual IP. In this example, the virtual IP is used as our backup DNS server.&#xA;DNS consideration I like to pre-reserve a DNS entry for my virtual IP address (which I will call vip from now on).</description>
+    </item>
+    <item>
+      <title>Nut</title>
+      <link>http://localhost:1313/services/nut/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/nut/</guid>
+      <description>Nut UPS Network UPS Tools project is to provide support for Power Devices, such as Uninterruptible Power Supplies, Power Distribution Units, Automatic Transfer Switches, Power Supply Units and Solar Controllers. NUT provides a common protocol and set of tools to monitor and manage such devices, and to consistently name equivalent features and data points, across a vast range of vendor-specific protocols and connection media types.&#xA;Hardware consideration Connect your UPS via USB before starting this.</description>
+    </item>
+    <item>
+      <title>Setup Docker</title>
+      <link>http://localhost:1313/services/docker/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/docker/</guid>
+      <description>Docker is an open-source platform that allows developers to package applications into containers, which are standardized, executable packages containing everything the application needs to run, including code, runtime environment, libraries, and system tools. This enables developers to build, deploy, and manage applications in a consistent and portable manner. Here&amp;rsquo;s a more detailed breakdown:&#xA;Containers: Docker uses containers, which are lightweight, standalone, and self-contained environments that isolate applications and their dependencies. Docker Engine: The core of Docker is the Docker Engine, a client-server application that manages the containers.</description>
+    </item>
+    <item>
+      <title>Tailscale</title>
+      <link>http://localhost:1313/services/tailscale/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/tailscale/</guid>
+      <description>Tailscale Tailscale makes creating software-defined networks easy: securely connecting users, services, and devices. I am using my DNS servers as VPN exit-nodes which exposes my services outside of my local network while adding a layer of security during my travel.&#xA;These steps are for Ubuntu 24.04 (noble) and once I convert this to Ansible it should be automated.&#xA;curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg &amp;gt;/dev/null curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.tailscale-keyring.list | sudo tee /etc/apt/sources.</description>
+    </item>
+    <item>
+      <title>Watchdog</title>
+      <link>http://localhost:1313/services/watchdog/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/watchdog/</guid>
+      <description>Watchdog In Linux, a watchdog is a mechanism, either hardware or software, that monitors the system&amp;rsquo;s health and automatically reboots it if it becomes unresponsive or crashes. It works by periodically sending a &amp;ldquo;heartbeat&amp;rdquo; signal to a timer. If the system fails to send the heartbeat within a specific timeframe, the watchdog triggers a reboot. Here&amp;rsquo;s a more detailed breakdown: Purpose: The primary goal of a watchdog is to ensure the system remains operational, even in the face of software bugs or hardware failures.</description>
+    </item>
+  </channel>
+</rss>

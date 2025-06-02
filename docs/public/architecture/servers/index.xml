@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Servers on irishlab.io</title>
+    <link>http://localhost:1313/architecture/servers/</link>
+    <description>Recent content in Servers on irishlab.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 15:26:15 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/architecture/servers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>General</title>
+      <link>http://localhost:1313/architecture/servers/general/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/architecture/servers/general/</guid>
+      <description>General Architecture This is how I setup my typical Ubuntu server regardless of the version of configuration, just the standard things out of the box.&#xA;Manual Installation SSH Key ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -N &amp;#39;&amp;#39; -C ${USER}@${HOSTNAME} export GH_USER=&amp;#34;irish1986&amp;#34; curl https://github.com/${GH_USER}.keys &amp;gt;&amp;gt; ~/.ssh/authorized_keys Updates sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y &amp;amp;&amp;amp; sudo apt autoclean -y Common packages sudo apt install nfs-common Users &amp;amp; Groups setup passwordless sudo on Linux?</description>
+    </item>
+    <item>
+      <title>DNS</title>
+      <link>http://localhost:1313/architecture/servers/dns/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/architecture/servers/dns/</guid>
+      <description>DNS Architecture This article goes over how I am setting up my local DNS services in my homelab. Essentially this uses Pi-hole, with Unbound, sync via Nebula Sync, secure through Tailscale VPN, and redundant with Keepalived all running on Ubuntu 24.04 as Docker container. The goal is to deploy a High Availability local DNS services with syncronization between multiple including a recursive DNS resolver.&#xA;Setup Ubuntu OS To setup Ubuntu, see this post (TBD).</description>
+    </item>
+  </channel>
+</rss>

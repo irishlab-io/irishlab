@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on irishlab.io</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Home on irishlab.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 15:26:15 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Continuous Delivery</title>
+      <link>http://localhost:1313/devops/c-delivery/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/devops/c-delivery/</guid>
+      <description>Continuous Delivery Continuous delivery is an extension of continuous integration since it automatically deploys all code changes to a testing and/or production environment after the build stage.&#xA;This means that on top of automated testing, you have an automated release process and you can deploy your application any time by clicking a button.&#xA;In theory, with continuous delivery, you can decide to release daily, weekly, fortnightly, or whatever suits your business requirements.</description>
+    </item>
+    <item>
+      <title>Continuous Deployment</title>
+      <link>http://localhost:1313/devops/c-deployment/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/devops/c-deployment/</guid>
+      <description>Continuous Deployment Continuous deployment goes one step further than continuous delivery. With this practice, every change that passes all stages of your production pipeline is released to your customers. There&amp;rsquo;s no human intervention, and only a failed test will prevent a new change to be deployed to production.&#xA;Continuous deployment is an excellent way to accelerate the feedback loop with your customers and take pressure off the team as there isn&amp;rsquo;t a &amp;ldquo;release day&amp;rdquo; anymore.</description>
+    </item>
+    <item>
+      <title>Fail2Ban</title>
+      <link>http://localhost:1313/services/fail2ban/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/fail2ban/</guid>
+      <description>Fail2Ban Manual Installation Automated Installation Ansible roles ansible-playbook fail2ban.yml -K Testing it </description>
+    </item>
+    <item>
+      <title>Homepage</title>
+      <link>http://localhost:1313/container/docker/homepage/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/container/docker/homepage/</guid>
+      <description>Homepage </description>
+    </item>
+    <item>
+      <title>Keepalived</title>
+      <link>http://localhost:1313/services/keepalived/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/keepalived/</guid>
+      <description>Keepalived Keepalived is designed to run on two separate hosts but share a virtual IP address. This ensures that if one goes down (the master), the backup will take over using the same virtual IP. In this example, the virtual IP is used as our backup DNS server.&#xA;DNS consideration I like to pre-reserve a DNS entry for my virtual IP address (which I will call vip from now on).</description>
+    </item>
+    <item>
+      <title>Nebula-Sync</title>
+      <link>http://localhost:1313/container/docker/nebula-sync/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/container/docker/nebula-sync/</guid>
+      <description>Nebula-Sync Create a new directory for Nebula Sync and navigate into it.&#xA;mkdir -p /opt/stacks/nebula-sync cd /opt/stacks/nebula-sync Create our compose file.&#xA;docker pull ghcr.io/lovelaze/nebula-sync:v0.10.0 # pre-load the container nano compose.yml Inside of our compose.yml paste:&#xA;--- name: nebula-sync services: nebula-sync: container_name: nebula-sync image: ghcr.io/lovelaze/nebula-sync:v0.10.0 restart: unless-stopped env_file: .env Create our .env with our variables.&#xA;Replace with your server IPs, passwords, timezone, and how frequently you want so run this sync job.</description>
+    </item>
+    <item>
+      <title>Nebula-Sync</title>
+      <link>http://localhost:1313/container/docker/traefik/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/container/docker/traefik/</guid>
+      <description>Traefik ./traefik ├── data │ ├── acme.json │ ├── config.yml │ └── traefik.yml └── cf_api_token.txt └── docker-compose.yml Create a new directory for Traefik and navigate into it.&#xA;mkdir -p opt/stacks/traefik cd opt/stacks/traefik Create our compose file.&#xA;nano compose.yml Inside of our compose.yml paste:&#xA;version: &amp;#34;3.8&amp;#34; services: traefik: image: traefik:v3.0 container_name: traefik restart: unless-stopped security_opt: - no-new-privileges:true networks: - proxy ports: - 80:80 - 443:443 # - 443:443/tcp # Uncomment if you want HTTP3 # - 443:443/udp # Uncomment if you want HTTP3 environment: CF_DNS_API_TOKEN_FILE: /run/secrets/cf_api_token # note using _FILE for docker secrets # CF_DNS_API_TOKEN: ${CF_DNS_API_TOKEN} # if using .</description>
+    </item>
+    <item>
+      <title>Nut</title>
+      <link>http://localhost:1313/services/nut/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/nut/</guid>
+      <description>Nut UPS Network UPS Tools project is to provide support for Power Devices, such as Uninterruptible Power Supplies, Power Distribution Units, Automatic Transfer Switches, Power Supply Units and Solar Controllers. NUT provides a common protocol and set of tools to monitor and manage such devices, and to consistently name equivalent features and data points, across a vast range of vendor-specific protocols and connection media types.&#xA;Hardware consideration Connect your UPS via USB before starting this.</description>
+    </item>
+    <item>
+      <title>PeaNUT</title>
+      <link>http://localhost:1313/container/docker/peanut/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/container/docker/peanut/</guid>
+      <description>PeaNUT Create a new directory for PeaNUT and navigate into it.&#xA;mkdir -p /opt/stacks/peanut cd /opt/stacks/peanut nano compose.yml --- name: peanut services: peanut: container_name: peanut image: brandawg93/peanut:5.7.2 restart: unless-stopped volumes: - &amp;#34;./config:/config&amp;#34; ports: - 8080:8080 env_file: .env # This file is used to set environment variables for the PeaNUT Docker container. WEB_PORT=8080 WEB_USERNAME= &amp;#34;your-username-here&amp;#34; WEB_PASSWORD= &amp;#34;your-password-here&amp;#34; nano /opt/stacks/peanut/config/settings.yml NUT_SERVERS: - HOST: localhost PORT: 3493 USERNAME: user PASSWORD: pass INFLUX_HOST: &amp;#39;&amp;#39; INFLUX_TOKEN: &amp;#39;&amp;#39; INFLUX_ORG: &amp;#39;&amp;#39; INFLUX_BUCKET: &amp;#39;&amp;#39; INFLUX_INTERVAL: 10 </description>
+    </item>
+    <item>
+      <title>Pi-Hole</title>
+      <link>http://localhost:1313/container/docker/pihole/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/container/docker/pihole/</guid>
+      <description>Pihole Create a new directory for Pi-Hole and navigate into it.&#xA;mkdir -p /opt/stacks/pihole cd /opt/stacks/pihole nano compose.yml --- name: pihole services: pihole: container_name: pihole image: ghcr.io/pi-hole/pihole:2025.04.0 restart: unless-stopped hostname: ${HOSTNAME} ports: - &amp;#34;53:53/tcp&amp;#34; - &amp;#34;53:53/udp&amp;#34; - &amp;#34;80:80/tcp&amp;#34; - &amp;#34;443:443/tcp&amp;#34; env_file: .env cap_add: - SYS_TIME - SYS_NICE volumes: - &amp;#34;./pihole:/etc/pihole&amp;#34; # This file is used to set environment variables for the Pi-hole Docker container. TZ=&amp;#34;America/Toronto&amp;#34; FTLCONF_dns_listeningMode=&amp;#34;all&amp;#34; FTLCONF_dns_upstreams= &amp;#34;1.1.1.1;127.0.0.1#5053&amp;#34; FTLCONF_webserver_api_password= &amp;#34;your-password-here&amp;#34; </description>
+    </item>
+    <item>
+      <title>Preparation</title>
+      <link>http://localhost:1313/services/k3s/prepare/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/k3s/prepare/</guid>
+      <description>Lorem Ipsum Most of the setup of the OS was already done for us by the bootstrap file, before we had to set up manually on Ubuntu following:&#xA;Hostname Update OS Removing snap Disable swap Remove ipv6 RPi Most of the setup of the OS was already done for us by the bootstrap file, before we had to set up manually on Ubuntu following:&#xA;Edit to cmdline.txt Disable green led Pretty much everything is done for us by the bootstrap file.</description>
+    </item>
+    <item>
+      <title>Setup Docker</title>
+      <link>http://localhost:1313/services/docker/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/docker/</guid>
+      <description>Docker is an open-source platform that allows developers to package applications into containers, which are standardized, executable packages containing everything the application needs to run, including code, runtime environment, libraries, and system tools. This enables developers to build, deploy, and manage applications in a consistent and portable manner. Here&amp;rsquo;s a more detailed breakdown:&#xA;Containers: Docker uses containers, which are lightweight, standalone, and self-contained environments that isolate applications and their dependencies. Docker Engine: The core of Docker is the Docker Engine, a client-server application that manages the containers.</description>
+    </item>
+    <item>
+      <title>Speed Test</title>
+      <link>http://localhost:1313/container/docker/speed-test/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/container/docker/speed-test/</guid>
+      <description>Speed Test </description>
+    </item>
+    <item>
+      <title>Tailscale</title>
+      <link>http://localhost:1313/container/docker/tailscale/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/container/docker/tailscale/</guid>
+      <description>Tailscale Create a new directory for Tailscale and navigate into it.&#xA;mkdir -p /opt/stacks/tailscale cd /opt/stacks/tailscale docker pull ghcr.io/tailscale/tailscale:latest # pre-load the container nano compose.yml --- name: tailscale services: tailscale: container_name: tailscale image: ghcr.io/tailscale/tailscale:v1.82.0 restart: unless-stopped hostname: rpi5-2.local.irishla.io env_file: .env volumes: - &amp;#34;./tailscale/state:/var/lib/tailscale&amp;#34; devices: - /dev/net/tun:/dev/net/tun cap_add: - net_admin nano .env # This file is used to set environment variables for the Tailscale Docker container. TS_AUTHKEY=tskey-client-notAReal-OAuthClientSecret1Atawk TS_EXTRA_ARGS=--advertise-tags=tag:container TS_STATE_DIR=/var/lib/tailscale TS_USERSPACE=false </description>
+    </item>
+    <item>
+      <title>Tailscale</title>
+      <link>http://localhost:1313/services/tailscale/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/tailscale/</guid>
+      <description>Tailscale Tailscale makes creating software-defined networks easy: securely connecting users, services, and devices. I am using my DNS servers as VPN exit-nodes which exposes my services outside of my local network while adding a layer of security during my travel.&#xA;These steps are for Ubuntu 24.04 (noble) and once I convert this to Ansible it should be automated.&#xA;curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg &amp;gt;/dev/null curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.tailscale-keyring.list | sudo tee /etc/apt/sources.</description>
+    </item>
+    <item>
+      <title>The Plan</title>
+      <link>http://localhost:1313/architecture/plan/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/architecture/plan/</guid>
+      <description>The Plan As Eisenhower once said, In preparing for battle I have always found that plans are useless, but planning is indispensable, so I am trying to plan ahead what I will be doing in this new documented rebuild of my homelab.&#xA;And as Mike Tyson also said, Everyone has a plan &#39;till they get punched in the mouth, therefore I expect things not to work 100% of the time.</description>
+    </item>
+    <item>
+      <title>Unbound</title>
+      <link>http://localhost:1313/container/docker/unbound/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/container/docker/unbound/</guid>
+      <description>Unbound Unbound is a private recursive DNS resolver. It can do what Google and the others do, but it is running locally on your LAN (on the Pi-hole host platform in most setups). The only client for your local unbound instance is typically Pi-hole. Run the commands below to install Unbound and access the directory to create the Pi-hole configuration file. I must convert this section to utilize a Docker container.</description>
+    </item>
+    <item>
+      <title>GitHub Action</title>
+      <link>http://localhost:1313/devops/ci/gha/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/devops/ci/gha/</guid>
+      <description>GitHub Action GitHub Actions are a great way to automate your own software development cycle. GitHub Actions are free of charge for public repositories and provide you with a whole CI/CD platform. It allows you to automate all parts of your software supply chain and run it in virtual environments or even your own environment using self-hosted runners. But more to come on this topic.&#xA;Much of what used to be done with a Jenkins job can now be done with GitHub Actions.</description>
+    </item>
+    <item>
+      <title>Hypervisor</title>
+      <link>http://localhost:1313/architecture/hypervisor/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/architecture/hypervisor/</guid>
+      <description>These hypervisors run on a conventional operating system (OS) just as other computer programs do. A virtual machine monitor runs as a process on the host, such as VirtualBox. Type-2 hypervisors abstract guest operating systems from the host operating system, effectively creating an isolated system that can be interacted with by the host. Examples of Type-2 hypervisor include VirtualBox and VMware Workstation.&#xA;Cluster of cluster Creating a private cloud mean that I will need to provision various workload in various environment.</description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>http://localhost:1313/architecture/clusters/k8s/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/architecture/clusters/k8s/</guid>
+      <description>I&amp;rsquo;ve always been amazed by cloud and virtualization technologies, so I decided to dive into Kubernetes and containerization. However, a few months ago, I found myself frustrated by how abstract and theoretical Kubernetes felt in online courses. I realized the best way to truly understand it was to build something real. That&amp;rsquo;s how the idea of a Kubernetes homelab came to life — a hands-on project to turn my curiosity into practical skills by breaking things, fixing them, and learning along the way.</description>
+    </item>
+    <item>
+      <title>PiKVM</title>
+      <link>http://localhost:1313/os/linux/pikvm/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/os/linux/pikvm/</guid>
+      <description>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    <item>
+      <title>Proxmox</title>
+      <link>http://localhost:1313/architecture/clusters/proxmox/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/architecture/clusters/proxmox/</guid>
+      <description>These hypervisors run on a conventional operating system (OS) just as other computer programs do. A virtual machine monitor runs as a process on the host, such as VirtualBox. Type-2 hypervisors abstract guest operating systems from the host operating system, effectively creating an isolated system that can be interacted with by the host. Examples of Type-2 hypervisor include VirtualBox and VMware Workstation.&#xA;Cluster of cluster Creating a private cloud mean that I will need to provision various workload in various environment.</description>
+    </item>
+    <item>
+      <title>TrueNAS Scale</title>
+      <link>http://localhost:1313/os/linux/truenas/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/os/linux/truenas/</guid>
+      <description>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    <item>
+      <title>Ubuntu</title>
+      <link>http://localhost:1313/os/linux/ubuntu/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/os/linux/ubuntu/</guid>
+      <description>Ubuntu Ubuntu is a free and open-source Linux-based operating system developed by Canonical and a community of developers. It&amp;rsquo;s a popular choice for desktop, server, and IoT devices. Ubuntu is known for its user-friendly interface, wide range of software, and strong community support.&#xA;Edition Desktop Server IoT Cloud Image Release Ubuntu 25.04 (Plucky Puffin) Ubuntu 24.10 (Oracular Oriole) Ubuntu 24.04.2 LTS (Noble Numbat) Ubuntu 22.04.5 LTS (Jammy Jellyfish) Ubuntu 20.04.6 LTS (Focal Fossa) Cloud-Init </description>
+    </item>
+    <item>
+      <title>Baremetal</title>
+      <link>http://localhost:1313/architecture/baremetal/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/architecture/baremetal/</guid>
+      <description>These hypervisors run on a conventional operating system (OS) just as other computer programs do. A virtual machine monitor runs as a process on the host, such as VirtualBox. Type-2 hypervisors abstract guest operating systems from the host operating system, effectively creating an isolated system that can be interacted with by the host. Examples of Type-2 hypervisor include VirtualBox and VMware Workstation.</description>
+    </item>
+    <item>
+      <title>Synology</title>
+      <link>http://localhost:1313/os/synology/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/os/synology/</guid>
+      <description>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    <item>
+      <title>Watchdog</title>
+      <link>http://localhost:1313/services/watchdog/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/watchdog/</guid>
+      <description>Watchdog In Linux, a watchdog is a mechanism, either hardware or software, that monitors the system&amp;rsquo;s health and automatically reboots it if it becomes unresponsive or crashes. It works by periodically sending a &amp;ldquo;heartbeat&amp;rdquo; signal to a timer. If the system fails to send the heartbeat within a specific timeframe, the watchdog triggers a reboot. Here&amp;rsquo;s a more detailed breakdown: Purpose: The primary goal of a watchdog is to ensure the system remains operational, even in the face of software bugs or hardware failures.</description>
+    </item>
+    <item>
+      <title>General</title>
+      <link>http://localhost:1313/architecture/servers/general/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/architecture/servers/general/</guid>
+      <description>General Architecture This is how I setup my typical Ubuntu server regardless of the version of configuration, just the standard things out of the box.&#xA;Manual Installation SSH Key ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -N &amp;#39;&amp;#39; -C ${USER}@${HOSTNAME} export GH_USER=&amp;#34;irish1986&amp;#34; curl https://github.com/${GH_USER}.keys &amp;gt;&amp;gt; ~/.ssh/authorized_keys Updates sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade -y &amp;amp;&amp;amp; sudo apt autoremove -y &amp;amp;&amp;amp; sudo apt autoclean -y Common packages sudo apt install nfs-common Users &amp;amp; Groups setup passwordless sudo on Linux?</description>
+    </item>
+    <item>
+      <title>Proxmox Datacenter Management</title>
+      <link>http://localhost:1313/os/linux/proxmox/pdm/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/os/linux/proxmox/pdm/</guid>
+      <description>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    <item>
+      <title>Proxmox Virtual Environment</title>
+      <link>http://localhost:1313/os/linux/proxmox/pve/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/os/linux/proxmox/pve/</guid>
+      <description>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    <item>
+      <title>Proxmox Backup Server</title>
+      <link>http://localhost:1313/os/linux/proxmox/pbs/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/os/linux/proxmox/pbs/</guid>
+      <description>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    <item>
+      <title>Raspberry Pi</title>
+      <link>http://localhost:1313/hardware/iot/rack_mon/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/hardware/iot/rack_mon/</guid>
+      <description>Lorem Ipsum My favourite Raspberry Pi production tool</description>
+    </item>
+    <item>
+      <title>Raspberry Pi</title>
+      <link>http://localhost:1313/hardware/rpi/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/hardware/rpi/</guid>
+      <description>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    <item>
+      <title>DNS</title>
+      <link>http://localhost:1313/architecture/servers/dns/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/architecture/servers/dns/</guid>
+      <description>DNS Architecture This article goes over how I am setting up my local DNS services in my homelab. Essentially this uses Pi-hole, with Unbound, sync via Nebula Sync, secure through Tailscale VPN, and redundant with Keepalived all running on Ubuntu 24.04 as Docker container. The goal is to deploy a High Availability local DNS services with syncronization between multiple including a recursive DNS resolver.&#xA;Setup Ubuntu OS To setup Ubuntu, see this post (TBD).</description>
+    </item>
+    <item>
+      <title>NAS</title>
+      <link>http://localhost:1313/hardware/custom/nas/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/hardware/custom/nas/</guid>
+      <description>Lorem Ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    <item>
+      <title>K3S Install</title>
+      <link>http://localhost:1313/services/k3s/k3s/</link>
+      <pubDate>Thu, 19 Oct 2017 15:26:15 +0000</pubDate>
+      <guid>http://localhost:1313/services/k3s/k3s/</guid>
+      <description>Master / Control In our case: control01&#xA;This is our primary node.&#xA;We are going to install the K3s version of Kubernetes, that is lightweight enough for out single board computers to handle. Use the following command to download and initialize K3s&amp;rsquo; master node.&#xA;curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644 --disable servicelb --token some_random_password --node-taint CriticalAddonsOnly=true:NoExecute --bind-address 192.168.0.10 --disable-cloud-controller --disable local-storage Some explanations:&#xA;&amp;ndash;write-kubeconfig-mode 644 - This is the mode that we want to use for the kubeconfig file.</description>
+    </item>
+    <item>
+      <title>Dell Micro x060</title>
+      <link>http://localhost:1313/hardware/dell/micro_x060/</link>
+      <pubDate>Tue, 17 Oct 2017 14:00:45 +0000</pubDate>
+      <guid>http://localhost:1313/hardware/dell/micro_x060/</guid>
+      <description>aaaaaa&#xA;vvvv&#xA;aaa</description>
+    </item>
+    <item>
+      <title>Internet Service Provider</title>
+      <link>http://localhost:1313/network/isp/</link>
+      <pubDate>Tue, 17 Oct 2017 14:00:45 +0000</pubDate>
+      <guid>http://localhost:1313/network/isp/</guid>
+      <description>aaaaaa&#xA;vvvv&#xA;aaa</description>
+    </item>
+    <item>
+      <title>Omada</title>
+      <link>http://localhost:1313/network/tp-link/omada/</link>
+      <pubDate>Tue, 17 Oct 2017 14:00:45 +0000</pubDate>
+      <guid>http://localhost:1313/network/tp-link/omada/</guid>
+      <description>aaaaaa&#xA;vvvv&#xA;aaa</description>
+    </item>
+    <item>
+      <title>WSL2</title>
+      <link>http://localhost:1313/os/windows/wsl2/</link>
+      <pubDate>Tue, 17 Oct 2017 14:00:45 +0000</pubDate>
+      <guid>http://localhost:1313/os/windows/wsl2/</guid>
+      <description>aaaaaa&#xA;vvvv&#xA;aaa</description>
+    </item>
+  </channel>
+</rss>
