@@ -16,7 +16,7 @@
     "chokidar-cli": "^3.0.0",
     "core-js": "^3.36.0",
     "cross-env": "^7.0.3",
-    "cssnano": "^6.1.0",
+    "cssnano": "^7.0.0",
     "es6-promise": "~4.2.8",
     "eslint": "^8.57.0",
     "flexbox-grid-mixins": "~0.3.4",
