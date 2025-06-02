@@ -9,26 +9,26 @@
     "config:recommended"
   ],
   "ansible-galaxy": {
-    "fileMatch": [
-      "(^|/)ansible/collections/.+\\.ya?ml(?:\\.j2)?$"
+    "managerFilePatterns": [
+      "/(^|/)ansible/collections/.+\\.ya?ml(?:\\.j2)?$/"
     ]
   },
   "docker-compose": {
-    "fileMatch": [
-      "(^|/)docker/.+\\.ya?ml(?:\\.j2)?$"
+    "managerFilePatterns": [
+      "/(^|/)docker/.+\\.ya?ml(?:\\.j2)?$/"
     ]
   },
   "kubernetes": {
-    "fileMatch": [
-      "(^|/)k8s/.+\\.ya?ml(?:\\.j2)?$"
+    "managerFilePatterns": [
+      "/(^|/)k8s/.+\\.ya?ml(?:\\.j2)?$/"
     ]
   },
   "pre-commit": {
     "enabled": true
   },
   "terraform": {
-    "fileMatch": [
-      "(^|/)terraform/.+\\.ya?ml(?:\\.j2)?$"
+    "managerFilePatterns": [
+      "/(^|/)terraform/.+\\.ya?ml(?:\\.j2)?$/"
     ]
   },
   "packageRules": [
