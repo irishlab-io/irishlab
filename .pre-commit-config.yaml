@@ -8,12 +8,12 @@ ci:
     - ggshield
 repos:
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v4.6.1
+    rev: v4.8.2
     hooks:
       - id: commitizen
         stages: [commit-msg]
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.39.0
+    rev: v1.40.0
     hooks:
       - id: ggshield
         language_version: python3
@@ -40,8 +40,6 @@ repos:
         stages: [pre-commit]
       - id: forbid-new-submodules
         stages: [pre-commit]
-      - id: forbid-submodules
-        stages: [pre-commit]
       - id: mixed-line-ending
         args:
           - --fix=lf
@@ -66,7 +64,7 @@ repos:
       - id: fix-smartquotes
         stages: [pre-commit]
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.44.0
+    rev: v0.45.0
     hooks:
       - id: markdownlint
         args:
@@ -88,7 +86,7 @@ repos:
       - id: actionlint
         stages: [pre-push]
   - repo: https://github.com/ansible-community/ansible-lint
-    rev: v25.4.0
+    rev: v25.5.0
     hooks:
       - id: ansible-lint
         files: \.(yaml|yml)$

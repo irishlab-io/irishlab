@@ -6,7 +6,13 @@
 !infra/cloudinit/template/
 /infra/proxmox/*
 !infra/proxmox/template/
+
+.env
 .cache_ggshield
+
+.wip/
+docs/public/
+docs/theme/
 
 # Local .terraform directories
 **/.terraform/*
