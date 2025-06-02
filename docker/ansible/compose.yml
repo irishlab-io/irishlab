@@ -1,32 +1,29 @@
 ---
-name: ansible-semaphore
-volumes:
-  ansible-semaphore-config:
-    name: ansible-semaphore-config
-    external: false
-  ansible-semaphore-db:
-    name: ansible-semaphore-db
-    external: false
+name: ansible
+
+networks: # docker network create proxy
+  proxy:
+    name: proxy
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
 
 services:
-  ansible-semaphore:
-    image: docker.io/semaphoreui/semaphore:v2.12.14
-    pull_policy: always
-    container_name: ansible-semaphore
-    restart: always
+  ansible:
+    container_name: ansible
+    image: docker.io/semaphoreui/semaphore:v2.14.10
+    restart: unless-stopped
     networks:
-      default: null
-    ports:
-      - mode: ingress
-        target: 3000
-        published: "3010"
-        protocol: tcp
-    environment:
-      SEMAPHORE_ADMIN_EMAIL: ${email}
-      SEMAPHORE_ADMIN_NAME: ${username}
-      SEMAPHORE_ADMIN_PASSWORD: ${password}
-      SEMAPHORE_ADMIN: ${username}
-      SEMAPHORE_DB_DIALECT: bolt
+      - proxy
+    env_file: .env
     volumes:
-      - ansible-semaphore-config:/etc/semaphore
-      - ansible-semaphore-db:/var/lib/semaphore
+      - "./config:/etc/semaphore"
+      - "./db:/var/lib/semaphore"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ansible.entrypoints=https"
+      - "traefik.http.routers.ansible.rule=Host(`ansible.local.irishlab.io`)"
+      - "traefik.http.routers.ansible.service=ansible"
+      - "traefik.http.routers.ansible.tls=true"
+      - "traefik.http.services.ansible.loadbalancer.server.port=3000"

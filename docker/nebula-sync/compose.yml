@@ -1,0 +1,9 @@
+---
+name: nebula-sync
+
+services:
+  nebula-sync:
+    container_name: nebula-sync
+    image: ghcr.io/lovelaze/nebula-sync:v0.10.0
+    restart: unless-stopped
+    env_file: .env

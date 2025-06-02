@@ -1,26 +1,29 @@
 ---
 name: homepage
 
-networks:
+networks: # docker network create proxy
   proxy:
+    name: proxy
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
     external: true
 
 services:
   homepage:
     container_name: homepage
     image: ghcr.io/gethomepage/homepage:v0.10.9
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./config:/app/config
-    environment:
-      PUID: 1000
-      PGID: 1000
     restart: unless-stopped
+    networks:
+      - proxy
+    env_file: .env
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./config:/app/config"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.homepage.entrypoints=https"
-      - "traefik.http.routers.homepage.rule=Host(`homepage.local.irishlab.io`)"
+      - "traefik.http.routers.homepage.rule=Host(`home.local.irishlab.io`)"
+      - "traefik.http.routers.homepage.service=homepage"
       - "traefik.http.routers.homepage.tls=true"
       - "traefik.http.services.homepage.loadbalancer.server.port=3000"
-    networks:
-      - proxy

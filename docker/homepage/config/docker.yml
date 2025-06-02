@@ -1,3 +1,3 @@
 ---
-- rpi4-0.lan:
+rpi5-1.local.irishlab.io:
   socket: /var/run/docker.sock

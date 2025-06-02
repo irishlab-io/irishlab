@@ -1,0 +1,25 @@
+---
+name: fast-api
+
+networks: # docker network create proxy
+  proxy:
+    name: proxy
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
+
+services:
+  fast-api:
+    container_name: fast-api
+    image: ghcr.io/mighty-muffin/fast-api:stable-20250509-b220940
+    restart: unless-stopped
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.fast-api.entrypoints=https"
+      - "traefik.http.routers.fast-api.rule=Host(`fast-api.irishlab.io`)"
+      - "traefik.http.routers.fast-api.service=fast-api"
+      - "traefik.http.routers.fast-api.tls=true"
+      - "traefik.http.services.fast-api.loadbalancer.server.port=8080"

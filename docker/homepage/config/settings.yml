@@ -1,9 +1,59 @@
 ---
-title: My Awesome Homepage
-theme: dark
-color: slate
+title: ~@irishlab.io
+description: No place like 127.0.0.1
+startUrl: http://home.local.irishlab.io/
 
 language: en
 
-showStats: true
-fiveColumns: true
+theme: dark
+color: slate
+useEqualHeights: true
+statusStyle: "dot"
+headerstyle: clean
+
+layout:
+
+  Calendar:
+    style: column
+    rows: 1
+    columns: 1
+    icon:
+    useEqualHeights: true
+
+  Network:
+    style: column
+    rows: 1
+    columns: 2
+    icon:
+    useEqualHeights: true
+
+  Proxmox:
+    style: row
+    rows: 1
+    columns: 3
+    icon: proxmox.png
+    initiallyCollapsed: true
+
+  Media:
+    style: row
+    rows: 3
+    columns: 1
+    icon:
+
+  Services:
+    style: column
+    rows: 3
+    columns: 2
+    icon:
+
+  Home:
+    style: column
+    rows: 4
+    columns: 1
+    icon:
+    initiallyCollapsed: true
+
+  Bookmarks:
+    style: row
+    columns: 1
+    initiallyCollapsed: true
