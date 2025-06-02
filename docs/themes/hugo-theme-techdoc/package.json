@@ -18,7 +18,7 @@
     "cross-env": "^7.0.3",
     "cssnano": "^6.1.0",
     "es6-promise": "~4.2.8",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "flexbox-grid-mixins": "~0.3.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^9.0.0",
