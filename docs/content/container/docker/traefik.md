@@ -12,8 +12,6 @@ author:
 weight: 1
 ---
 
-# Traefik
-
 Create a new directory for Traefik and navigate into it.
 
 ```bash
