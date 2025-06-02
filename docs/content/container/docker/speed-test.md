@@ -12,8 +12,6 @@ author:
 weight: 1
 ---
 
-# Speedtest
-
 Create a new directory for Speedtest and navigate into it.
 
 ```bash

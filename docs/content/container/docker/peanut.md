@@ -12,8 +12,6 @@ author:
 weight: 1
 ---
 
-# PeaNUT
-
 Create a new directory for PeaNUT and navigate into it.
 
 ```bash

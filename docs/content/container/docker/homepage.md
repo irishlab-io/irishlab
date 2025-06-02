@@ -11,5 +11,3 @@ author:
 
 weight: 1
 ---
-
-# Homepage

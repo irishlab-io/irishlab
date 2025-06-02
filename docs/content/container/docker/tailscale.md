@@ -12,8 +12,6 @@ author:
 weight: 1
 ---
 
-# Tailscale
-
 Create a new directory for Tailscale and navigate into it.
 
 ```bash

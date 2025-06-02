@@ -12,8 +12,6 @@ author:
 weight: 1
 ---
 
-# Pihole
-
 Create a new directory for Pi-Hole and navigate into it.
 
 ```bash

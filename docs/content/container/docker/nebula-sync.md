@@ -12,8 +12,6 @@ author:
 weight: 1
 ---
 
-# Nebula-Sync
-
 Create a new directory for Nebula Sync and navigate into it.
 
 ```bash
