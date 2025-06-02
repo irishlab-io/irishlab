@@ -12,7 +12,7 @@
 
 .wip/
 docs/public/
-docs/theme/
+docs/themes*
 
 # Local .terraform directories
 **/.terraform/*

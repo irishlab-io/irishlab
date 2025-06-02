@@ -1,4 +1,4 @@
-baseURL = "https://blog.irishlab.io"
+baseURL = "https://www.irishlab.io"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
@@ -17,9 +17,9 @@ enableMissingTranslationPlaceholders = false
     dateformat = "" # default "2 Jan 2006"
 
     github_repository = "https://github.com/irishlab-io/irishlab"
-    github_doc_repository = "https://github.com/irishlab-io/irishlab-docs"
+    github_doc_repository = "https://github.com/irishlab-io/irishlab"
     github_doc_repository_branch = "main"
-    github_doc_repository_path = "irishlab-docs/content/"
+    github_doc_repository_path = "irishlab/docs/content/"
 
     # Analytic section
     # google_analytics_id = "" # Your Google Analytics tracking id
