@@ -19,6 +19,7 @@ MD025:
   front_matter_title: ""
 MD033:
   allowed_elements: [a, br, p, img]
+MD034: false
 MD041:
   level: 1
   front_matter_title: ""
