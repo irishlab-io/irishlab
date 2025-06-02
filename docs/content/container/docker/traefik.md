@@ -4,7 +4,7 @@ lastmod: 2019-10-26T15:26:15Z
 publishdate: 2018-11-23T15:26:15Z
 draft: false
 
-title: "Nebula-Sync"
+title: "Traefik"
 description: ""
 author:
   - irish1986
@@ -36,6 +36,9 @@ nano compose.yml
 ```
 
 Inside of our `compose.yml` paste:
+
+
+{{% include-remote-mdsnippet "https://github.com/irishlab-io/irishlab/raw/main/ansible/roles/docker/files/demo/nginx/internal/compose.yml" "yaml" %}}
 
 ```yaml
 version: "3.8"

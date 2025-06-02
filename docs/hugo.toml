@@ -10,6 +10,9 @@ metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
+[security]
+  enableInlineShortcodes = true
+
 [params]
     menu_style = "slide-menu"
     description = "This is my homelab, there are many like this but this one is mine."
