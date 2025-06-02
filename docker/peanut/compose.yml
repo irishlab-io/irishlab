@@ -1,0 +1,13 @@
+---
+name: peanut
+
+services:
+  peanut:
+    container_name: peanut
+    image: brandawg93/peanut:5.7.2
+    restart: unless-stopped
+    volumes:
+      - "./config:/config"
+    ports:
+      - 8080:8080
+    env_file: .env

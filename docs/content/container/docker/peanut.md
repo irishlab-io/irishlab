@@ -22,42 +22,6 @@ cd /opt/stacks/peanut
 nano compose.yml
 ```
 
-```yaml
----
-name: peanut
+Inside of our `compose.yml` paste:
 
-services:
-  peanut:
-    container_name: peanut
-    image: brandawg93/peanut:5.7.2
-    restart: unless-stopped
-    volumes:
-      - "./config:/config"
-    ports:
-      - 8080:8080
-    env_file: .env
-```
-
-```bash
-# This file is used to set environment variables for the PeaNUT Docker container.
-WEB_PORT=8080
-WEB_USERNAME= "your-username-here"
-WEB_PASSWORD= "your-password-here"
-```
-
-```bash
-nano /opt/stacks/peanut/config/settings.yml
-```
-
-```yaml
-NUT_SERVERS:
-  - HOST: localhost
-    PORT: 3493
-    USERNAME: user
-    PASSWORD: pass
-INFLUX_HOST: ''
-INFLUX_TOKEN: ''
-INFLUX_ORG: ''
-INFLUX_BUCKET: ''
-INFLUX_INTERVAL: 10
-```
+{{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/peanut/compose.yml" "yaml" %}}
