@@ -47,7 +47,7 @@ services:
 
   sonar_db:
     container_name: sonar_db
-    image: postgres:13
+    image: postgres:17
     restart: unless-stopped
     networks:
       - proxy
