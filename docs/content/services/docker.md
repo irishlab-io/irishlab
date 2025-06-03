@@ -30,11 +30,11 @@ sudo sh ./get-docker.sh --dry-run
 sudo sh ./get-docker.sh
 ```
 
-- Once Docker has finished installing to your Raspberry Pi, there are a couple more things we need to do.
+- Once Docker has finished installing to your server, there are a couple more things we need to do.
 
 For another user to be able to interact with Docker, it needs to be added to the docker group.
 
-So, our next step is to add our current user to the docker group by using the usermod command as shown below. By using "$USER" we are inserting the environment variable that stores the current users name.
+So, our next step is to add our current user to the docker group by using the usermod command as shown below. By using `$USER` we are inserting the environment variable that stores the current users name.
 
 - Since we made some changes to our user, we will now need to log out and log back in for it to take effect.
 
