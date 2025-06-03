@@ -12,9 +12,6 @@ author:
 weight: 1
 ---
 
-# Fail2Ban
-
-
 ## Manual Installation
 
 ## Automated Installation

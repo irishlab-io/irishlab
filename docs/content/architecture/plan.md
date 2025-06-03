@@ -39,15 +39,15 @@ With the exception of the storage nodes (actually data hosted in those storage n
   - Proxmox Virtual Environment (PVE), to provide virtualization platform designed for the provisioning of hyper-converged infrastructure
   - Proxmox Backup Server (PBS), to provide seamless centralized solution for backing up virtual machines and containers running on PVE
 - Run a Kubernetes cluster hosting most services offered at home
-    - Use hybrid AMD64/ARM64 nodes combining in the same cluster virtual machines and Raspberry Pi nodes.
-    - Use a lightweight Kubernetes distribution (K3S) which has a smaller memory footprint which is ideal for running on Rpi.
-    - Use Kubernetes distributed storage block technology for persistent storage
+  - Use hybrid AMD64/ARM64 nodes combining in the same cluster virtual machines and Raspberry Pi nodes.
+  - Use a lightweight Kubernetes distribution (K3S) which has a smaller memory footprint which is ideal for running on Rpi.
+  - Use Kubernetes distributed storage block technology for persistent storage
 - Run a network attached storage (NAS) node as a centralized solution
-    - Virtualized TrueNAS Scale under PVE which hardware passthrough for HBA cards
-    - Provide bulk storage for media, backup and oher long term archiving solution
+  - Virtualized TrueNAS Scale under PVE which hardware passthrough for HBA cards
+  - Provide bulk storage for media, backup and oher long term archiving solution
 - Automate deployment of everything I can using using IaC (infrastructure as a code)
-    - Provision PVE nodes with [Proxmox Automated Installation](https://pve.proxmox.com/wiki/Automated_Installation) to install PVE in an unattended manner.
-    - Provision baremetal nodes with [cloud-init](https://cloudinit.readthedocs.io/en/latest/) to automate the initial OS installation.
-    - Use [Terraform](https://developer.hashicorp.com/terraform/docs) for provisionning various ressources computing and networking.
-    - Use [Ansible](https://docs.ansible.com/) for automating the configuration of the all nodes, installation, external services, and bootstrap setup.
-    - [Flux CD](https://fluxcd.io/) to automatically provision Kubernetes applications from git repository.
+  - Provision PVE nodes with [Proxmox Automated Installation](https://pve.proxmox.com/wiki/Automated_Installation) to install PVE in an unattended manner.
+  - Provision baremetal nodes with [cloud-init](https://cloudinit.readthedocs.io/en/latest/) to automate the initial OS installation.
+  - Use [Terraform](https://developer.hashicorp.com/terraform/docs) for provisionning various ressources computing and networking.
+  - Use [Ansible](https://docs.ansible.com/) for automating the configuration of the all nodes, installation, external services, and bootstrap setup.
+  - [Flux CD](https://fluxcd.io/) to automatically provision Kubernetes applications from git repository.

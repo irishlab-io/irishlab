@@ -12,10 +12,7 @@ author:
 weight: 1
 ---
 
-# Nut UPS
-
 [Network UPS Tools](https://networkupstools.org/) project is to provide support for Power Devices, such as Uninterruptible Power Supplies, Power Distribution Units, Automatic Transfer Switches, Power Supply Units and Solar Controllers. NUT provides a common protocol and set of tools to monitor and manage such devices, and to consistently name equivalent features and data points, across a vast range of vendor-specific protocols and connection media types.
-
 
 ## Hardware consideration
 
@@ -29,7 +26,6 @@ sudo apt update
 sudo apt install nut nut-client nut-server
 sudo nut-scanner -U
 ```
-
 
 ```bash
 sudo nano /etc/nut/ups.conf
@@ -47,6 +43,5 @@ sudo nano /etc/udev/rules.d/99-nut-ups.rules
 ```bash
 ansible-playbook nut.yml -K
 ```
-
 
 ## Testing it

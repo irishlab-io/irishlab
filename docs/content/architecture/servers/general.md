@@ -10,10 +10,7 @@ description: "General Server Architecture"
 weight: 10
 ---
 
-# General Architecture
-
 This is how I setup my typical `Ubuntu server` regardless of the version of configuration, just the standard things out of the box.
-
 
 ## Manual Installation
 

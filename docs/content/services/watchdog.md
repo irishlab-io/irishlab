@@ -12,8 +12,6 @@ author:
 weight: 5
 ---
 
-## Watchdog
-
 In Linux, a watchdog is a mechanism, either hardware or software, that monitors the system's health and automatically reboots it if it becomes unresponsive or crashes. It works by periodically sending a "heartbeat" signal to a timer. If the system fails to send the heartbeat within a specific timeframe, the watchdog triggers a reboot.
 Here's a more detailed breakdown:
 Purpose:
@@ -30,11 +28,9 @@ In Linux, the watchdog is often represented by a special device file, /dev/watch
 Benefits:
 Watchdogs are particularly useful in embedded systems and servers that need to operate without human intervention for extended periods. They help ensure high reliability and availability.
 
-
 ## Hardware consideration
 
 ### RPi
-
 
 ```bash
 ls -la /dev/watchdog*
@@ -77,7 +73,6 @@ There are a lot of parameters there, I suggest paying attention to interface and
 
 Small note **do not use tabs** in lines – the watchdog will ignore such lines.
 And the second note: Raspberry Pi only supports a maximum of 15 seconds for watchdog-timeout.
-
 
 ```bash
 sudo systemctl enable watchdog

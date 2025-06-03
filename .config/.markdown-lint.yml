@@ -22,10 +22,6 @@ MD033:
 MD034: false
 MD041: false
 MD044:
-  names:
-    - DevOps
-    - DevSecOps
-    - Git
   code_blocks: false
 MD046:
   style: fenced

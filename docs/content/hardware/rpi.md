@@ -10,8 +10,6 @@ description: "Text about this post"
 weight: 21
 ---
 
-# Lorem Ipsum
-
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Hardware
@@ -28,9 +26,9 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## RPi Twearking
 
+```bash
 sudo rpi-eeprom-config --edit
 PSU_MAX_CURRENT=5000
-
 
 /boot/firmware/config.txt
 
@@ -42,3 +40,4 @@ gpu_mem=16
 max_usb_current=1
 over_voltage_delta=50000
 usb_max_current_enable=1
+```

@@ -12,8 +12,6 @@ author:
 weight: 1
 ---
 
-## Keepalived
-
 [Keepalived](https://www.keepalived.org/) is designed to run on two separate hosts but share a virtual IP address. This ensures that if one goes down (the master), the backup will take over using the same virtual IP. In this example, the virtual IP is used as our backup DNS server.
 
 ## DNS consideration
@@ -63,9 +61,9 @@ vrrp_instance VI_1 {
   virtual_ipaddress {
     192.168.1.253/24
   }
-
 }
 ```
+
 Paste this information into the configuration file of the `backup` and modify it as needed.
 
 ```bash
@@ -100,7 +98,6 @@ vrrp_instance VI_1 {
   virtual_ipaddress {
     192.168.1.253/24
   }
-
 }
 ```
 
@@ -137,7 +134,6 @@ ansible-playbook keepalived.yml -K
 
 See what is going on.
 
-
 Let's do a quick test
 
 ```bash
@@ -145,9 +141,7 @@ watch systemctl status keepalived.service .5 # on the second node
 sudo systemctl stop keepalived.service # on the first node
 ```
 
-
 ---
-
 
 ### Setup Keepalived
 

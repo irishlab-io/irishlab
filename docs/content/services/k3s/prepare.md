@@ -27,5 +27,4 @@ Most of the setup of the OS was already done for us by the bootstrap file, befor
 - Edit to cmdline.txt
 - Disable green led
 
-
 Pretty much everything is done for us by the bootstrap file. So much time saved ! And super easy and quick way to bring up new node.

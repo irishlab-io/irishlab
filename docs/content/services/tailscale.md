@@ -12,9 +12,6 @@ author:
 weight: 1
 ---
 
-# Tailscale
-
-
 [Tailscale](https://www.tailscale.com/) makes creating software-defined networks easy: securely connecting users, services, and devices.  I am using my DNS servers as VPN **exit-nodes** which exposes my services outside of my local network while adding a layer of security during my travel.
 
 These steps are for Ubuntu 24.04 (noble) and once I convert this to Ansible it should be automated.
