@@ -1,33 +1,43 @@
 ---
+name: lidarr
+
+networks: # docker network create proxy
+  proxy:
+    name: proxy
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
+
 volumes:
-  lidarr:
-    name: lidarr
-    external: false
   downloads:
     name: downloads
     driver_opts:
       type: nfs
-      o: addr=nas-1.lan,nolock,soft,rw
+      o: addr=192.168.20.41,nolock,soft,rw
       device: :/mnt/rusty/downloads/
   music:
     name: music
     driver_opts:
       type: nfs
-      o: addr=nas-1.lan,nolock,soft,rw
+      o: addr=192.168.20.41,nolock,soft,rw
       device: :/mnt/rusty/media/music
 
 services:
   lidarr:
     container_name: lidarr
     image: lscr.io/linuxserver/lidarr:8.1.2135
-    ports:
-      - 8686:8686
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Toronto
-    volumes:
-      - 'lidarr:/config'
-      - 'music:/music'
-      - 'downloads:/downloads'
     restart: unless-stopped
+    networks:
+      - proxy
+    env_file: .env
+    volumes:
+      - "./config:/config"
+      - "music:/music"
+      - "downloads:/downloads"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lidarr.entrypoints=https"
+      - "traefik.http.routers.lidarr.rule=Host(`lidarr.local.irishlab.io`)"
+      - "traefik.http.routers.lidarr.tls=true"
+      - "traefik.http.services.lidarr.loadbalancer.server.port=8686"

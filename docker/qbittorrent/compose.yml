@@ -1,27 +1,26 @@
 ---
-name: gluetun
+name: qbittorrent
 
 networks:
-  vpn:
-    name: vpn
+  gluetun:
+    name: gluetun
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
 
 services:
 
-  vpn:
-    container_name: vpn
-    image: docker.io/qmcgaw/gluetun:v3.40.0
-    cap_add:
-      - NET_ADMIN
-    networks:
-      - vpn
-    ports:
-      - 8080:8080
-      - 6881:6881
-      - 6881:6881/udp
-    environment:
-      - VPN_SERVICE_PROVIDER=nordvpn
-      - OPENVPN_USER=${username}
-      - OPENVPN_PASSWORD=${password}
-      - SERVER_REGIONS=Canada
-      - SERVER_HOSTNAMES=ca1549.nordvpn.com
+  qbittorrent:
+    container_name: qbittorrent
+    image: lscr.io/linuxserver/qbittorrent:latest
     restart: unless-stopped
+    networks:
+      - gluetun
+    ports:
+      - "8080:8080"
+      # - "6881:6881 "# already mapped by gluetun
+      # - "6881:6881/udp" # already mapped by gluetun
+    env_file: .env
+    volumes:
+      - "./config:/config"

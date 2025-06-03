@@ -1,0 +1,22 @@
+---
+name: configarr
+
+networks: # docker network create proxy
+  proxy:
+    name: proxy
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
+
+services:
+  configarr:
+    container_name: configarr
+    image: ghcr.io/raydak-labs/configarr:latest
+    restart: unless-stopped
+    networks:
+      - proxy
+    env_file: .env
+    volumes:
+      - "./config:/config"
+      - "./dockerrepos:/app/repos"

@@ -1,66 +1,38 @@
 ---
 http:
-  # region routers
-  routers:
-    pihole:
-      entryPoints:
-        - websecure
-      rule: "Host(`pihole.local.irishlab.io`)"
-      middlewares:
-        - pihole-redirectregex
-        - pihole-addprefix
-      tls:
-        certResolver: le
-      service: pihole
-    pve-1:
-      entryPoints:
-        - "https"
-      rule: "Host(`pve-1.local.irishlab.io`)"
-      middlewares:
-        - default-headers
-        - https-redirectscheme
-      tls: {}
-      service: pve-1
-  # region services
-  services:
-    pve-1:
-      loadBalancer:
-        servers:
-          - url: "https://192.168.20.11:8006"
-        passHostHeader: true
   # region middleware
   middlewares:
+    default-headers:
+      headers:
+        browserXssFilter: true
+        contentTypeNosniff: true
+        customBrowserXSSValue: 0
+        customFrameOptionsValue: SAMEORIGIN
+        customRequestHeaders:
+          X-Forwarded-Proto: https
+        forceSTSHeader: true
+        frameDeny: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 15552000
     https-redirectscheme:
       redirectScheme:
         scheme: https
         permanent: true
-    pihole-addprefix:
-      addPrefix:
-        prefix: /admin
-    pihole-redirectregex:
-      redirectRegex:
-        regex: /admin/$
-        replacement: /
-    default-headers:
-      headers:
-        frameDeny: true
-        browserXssFilter: true
-        contentTypeNosniff: true
-        forceSTSHeader: true
-        stsIncludeSubdomains: true
-        stsPreload: true
-        stsSeconds: 15552000
-        customFrameOptionsValue: SAMEORIGIN
-        customRequestHeaders:
-          X-Forwarded-Proto: https
     default-whitelist:
       ipAllowList:
         sourceRange:
           - "10.0.0.0/8"
           - "192.168.0.0/16"
-          - "172.16.0.0/12"
+          - "172.17.0.0/24"
     secured:
       chain:
         middlewares:
           - default-whitelist
           - default-headers
+
+  # region routers
+  routers:
+
+  # region services
+  services:

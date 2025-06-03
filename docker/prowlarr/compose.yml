@@ -1,19 +1,26 @@
 ---
-volumes:
-  prowlarr:
-    name: prowlarr
-    external: false
+name: prowlarr
+
+networks: # docker network create proxy
+  proxy:
+    name: proxy
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
 
 services:
   prowlarr:
     container_name: prowlarr
     image: lscr.io/linuxserver/prowlarr:1.36.3
-    ports:
-      - 9696:9696
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Toronto
+    restart: unless-stopped
+    networks:
+      - proxy
     volumes:
       - 'prowlarr:/config'
-    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.prowlarr.entrypoints=https"
+      - "traefik.http.routers.prowlarr.rule=Host(`prowlarr.local.irishlab.io`)"
+      - "traefik.http.routers.prowlarr.tls=true"
+      - "traefik.http.services.prowlarr.loadbalancer.server.port=9696"

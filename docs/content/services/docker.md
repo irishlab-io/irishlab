@@ -41,6 +41,8 @@ So, our next step is to add our current user to the docker group by using the us
 You can log out by running the following command in the terminal.
 
 ```bash
+sudo mkdir -p /opt/stacks/
+sudo chown -R $(id -u):$(id -g) /opt/stacks
 sudo usermod -aG docker $USER # an logout
 docker run hello-world
 ```

@@ -1,33 +1,43 @@
 ---
+name: radarr
+
+networks: # docker network create proxy
+  proxy:
+    name: proxy
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
+
 volumes:
-  radarr:
-    name: radarr
-    external: false
   downloads:
     name: downloads
     driver_opts:
       type: nfs
-      o: addr=nas-1.lan,nolock,soft,rw
+      o: addr=192.168.20.41,nolock,soft,rw
       device: :/mnt/rusty/downloads/
   movies:
     name: movies
     driver_opts:
       type: nfs
-      o: addr=nas-1.lan,nolock,soft,rw
+      o: addr=192.168.20.41,nolock,soft,rw
       device: :/mnt/rusty/media/movies
 
 services:
   radarr:
     container_name: radarr
-    image: lscr.io/linuxserver/radarr:5.25.0
-    ports:
-      - 7878:7878
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Toronto
-    volumes:
-      - 'radarr:/config'
-      - 'movies:/movies'
-      - 'downloads:/downloads'
+    image: lscr.io/linuxserver/radarr:5.19.3
     restart: unless-stopped
+    networks:
+      - proxy
+    env_file: .env
+    volumes:
+      - "./config:/config"
+      - "movies:/movies"
+      - "downloads:/downloads"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.radarr.entrypoints=https"
+      - "traefik.http.routers.radarr.rule=Host(`radarr.local.irishlab.io`)"
+      - "traefik.http.routers.radarr.tls=true"
+      - "traefik.http.services.radarr.loadbalancer.server.port=7878"

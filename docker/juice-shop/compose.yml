@@ -1,5 +1,5 @@
 ---
-name: whoami
+name: juiceshop
 
 networks: # docker network create proxy
   proxy:
@@ -10,16 +10,16 @@ networks: # docker network create proxy
     external: true
 
 services:
-  whoami:
-    container_name: whoami
-    image: docker.io/traefik/whoami:v1.11
+  juiceshop:
+    container_name: juiceshop
+    image: bkimminich/juice-shop:v17.3.0
     restart: unless-stopped
     networks:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.whoami.entrypoints=https"
-      - "traefik.http.routers.whoami.rule=Host(`whoami.local.irishlab.io`)"
-      - "traefik.http.routers.whoami.service=whoami"
-      - "traefik.http.routers.whoami.tls=true"
-      - "traefik.http.services.whoami.loadbalancer.server.port=80"
+      - "traefik.http.routers.juiceshop.entrypoints=https"
+      - "traefik.http.routers.juiceshop.rule=Host(`juiceshop.local.irishlab.io`)"
+      - "traefik.http.routers.juiceshop.service=juiceshop"
+      - "traefik.http.routers.juiceshop.tls=true"
+      - "traefik.http.services.juiceshop.loadbalancer.server.port=3000"

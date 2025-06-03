@@ -9,6 +9,20 @@ networks: # docker network create proxy
       com.docker.network.bridge.name: proxy
     external: true
 
+volumes:
+  movies:
+    name: movies
+    driver_opts:
+      type: nfs
+      o: addr=192.168.20.41,nolock,soft,rw
+      device: :/mnt/rusty/media/movies
+  tv:
+    name: tv
+    driver_opts:
+      type: nfs
+      o: addr=192.168.20.41,nolock,soft,rw
+      device: :/mnt/rusty/media/tv
+
 services:
   jellyfin:
     container_name: jellyfin
@@ -19,8 +33,8 @@ services:
     env_file: .env
     volumes:
       - "./jellyfin/library:/config"
-      # - /path/to/tvseries:/data/tvshows
-      # - /path/to/movies:/data/movies
+      - "movies:/data/movies"
+      - "tv:/data/tv"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.jellyfin.entrypoints=https"

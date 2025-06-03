@@ -1,0 +1,26 @@
+---
+name: decluttarr
+
+networks: # docker network create proxy
+  gluetun:
+    name: gluetun
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
+  proxy:
+    name: proxy
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
+
+services:
+  decluttarr:
+    container_name: decluttarr
+    image: ghcr.io/manimatter/decluttarr:v1.50.2
+    restart: unless-stopped
+    networks:
+      - gluetun
+      - proxy
+    env_file: .env

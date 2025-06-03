@@ -15,11 +15,11 @@ weight: 1
 Create a new directory for Traefik and navigate into it.
 
 ```bash
-mkdir -p opt/stacks/traefik
-mkdir -p opt/stacks/traefik/data
-touch opt/stacks/traefik/data/acme.json
-chmod 0600 opt/stacks/traefik/data/acme.json
-cd opt/stacks/traefik
+mkdir -p /opt/stacks/traefik
+mkdir -p /opt/stacks/traefik/data
+touch /opt/stacks/traefik/data/acme.json
+chmod 0600 /opt/stacks/traefik/data/acme.json
+cd /opt/stacks/traefik
 nano compose.yml
 nano .env
 ```

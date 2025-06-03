@@ -1,0 +1,25 @@
+---
+name: flaresolverr
+
+networks: # docker network create proxy
+  proxy:
+    name: proxy
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
+
+services:
+  flaresolverr:
+    container_name: flaresolverr
+    image: ghcr.io/flaresolverr/flaresolverr:v3.3.22
+    restart: unless-stopped
+    networks:
+      - proxy
+    env_file: .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.flaresolverr.entrypoints=https"
+      - "traefik.http.routers.flaresolverr.rule=Host(`flaresolverr.local.irishlab.io`)"
+      - "traefik.http.routers.flaresolverr.tls=true"
+      - "traefik.http.services.flaresolverr.loadbalancer.server.port=8191"

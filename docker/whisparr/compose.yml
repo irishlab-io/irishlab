@@ -1,33 +1,43 @@
 ---
+name: whisparr
+
+networks: # docker network create proxy
+  proxy:
+    name: proxy
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
+
 volumes:
-  whisparr:
-    name: whisparr
-    external: false
   downloads:
     name: downloads
     driver_opts:
       type: nfs
-      o: addr=nas-1.lan,nolock,soft,rw
+      o: addr=192.168.20.41,nolock,soft,rw
       device: :/mnt/rusty/downloads/
   porn:
     name: porn
     driver_opts:
       type: nfs
-      o: addr=nas-1.lan,nolock,soft,rw
+      o: addr=192.168.20.41,nolock,soft,rw
       device: :/mnt/rusty/media/porn
 
 services:
   whisparr:
     container_name: whisparr
     image: ghcr.io/hotio/whisparr:v3-3.0.0.530
-    ports:
-      - 6969:6969
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=America/Toronto
-    volumes:
-      - 'whisparr:/config'
-      - 'porn:/porn'
-      - 'downloads:/downloads'
     restart: unless-stopped
+    networks:
+      - proxy
+    env_file: .env
+    volumes:
+      - "./config:/config"
+      - "porn:/porn"
+      - "downloads:/downloads"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whisparr.entrypoints=https"
+      - "traefik.http.routers.whisparr.rule=Host(`whisparr.local.irishlab.io`)"
+      - "traefik.http.routers.whisparr.tls=true"
+      - "traefik.http.services.whisparr.loadbalancer.server.port=6969"

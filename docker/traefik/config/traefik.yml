@@ -4,7 +4,7 @@ global:
   sendAnonymousUsage: false
 
 log:
-  level: ERROR
+  level: INFO
 
 api:
   dashboard: true
@@ -29,7 +29,7 @@ providers:
     endpoint: "unix:///var/run/docker.sock"
     exposedByDefault: false
   file:
-    filename: /config.yml
+    filename: ./config.yml
     watch: true
 
 certificatesResolvers:

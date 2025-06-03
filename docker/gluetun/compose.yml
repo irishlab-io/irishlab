@@ -1,25 +1,26 @@
 ---
-networks:
+name: gluetun
+
+networks: # docker network create gluetun
   gluetun:
     name: gluetun
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: proxy
+    external: true
 
 services:
 
   gluetun:
     container_name: gluetun
     image: docker.io/qmcgaw/gluetun:v3.40.0
-    cap_add:
-      - NET_ADMIN
+    restart: unless-stopped
     networks:
       - gluetun
+    env_file: .env
+    cap_add:
+      - NET_ADMIN
     ports:
       - 8000:8000
       - 6881:6881
       - 6881:6881/udp
-    environment:
-      - VPN_SERVICE_PROVIDER=<secret>
-      - OPENVPN_USER=<secret>
-      - OPENVPN_PASSWORD=<secret>
-      - SERVER_REGIONS=<secret>
-      - SERVER_HOSTNAMES=<secret>
-    restart: unless-stopped
