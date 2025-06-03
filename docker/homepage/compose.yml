@@ -12,7 +12,7 @@ networks: # docker network create proxy
 services:
   homepage:
     container_name: homepage
-    image: ghcr.io/gethomepage/homepage:v0.10.9
+    image: ghcr.io/gethomepage/homepage:v1.3.2
     restart: unless-stopped
     networks:
       - proxy
