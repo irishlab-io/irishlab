@@ -6,9 +6,9 @@
 {{/* Handle the "file" named parameter or a single unnamed parameter as the file
 path */}}
 {{ if .IsNamedParams }}
-	{{ $.Scratch.Set "fparameter" ( .Get "file" ) }}
+    {{ $.Scratch.Set "fparameter" ( .Get "file" ) }}
 {{ else }}
-	{{ $.Scratch.Set "fparameter" ( .Get 0 ) }}
+    {{ $.Scratch.Set "fparameter" ( .Get 0 ) }}
 {{ end }}
 
 
@@ -36,6 +36,6 @@ Throw a compile error or print an error on the page if the file is not found */}
   {{ end }}
 {{ else if eq (.Get "draft") "true" }}
 
-  <p style="color: #D74848"><b><i>The file <code>{{ $.Scratch.Get "filepath" }}</code> was not found.</i></b></p> 
+  <p style="color: #D74848"><b><i>The file <code>{{ $.Scratch.Get "filepath" }}</code> was not found.</i></b></p>
 
 {{ else }}{{- errorf "Shortcode %q: file %q not found at %s" .Name ($.Scratch.Get "filepath") .Position -}}{{ end }}
