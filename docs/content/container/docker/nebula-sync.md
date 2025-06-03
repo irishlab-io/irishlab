@@ -17,10 +17,14 @@ Create a new directory for Nebula Sync and navigate into it.
 ```bash
 mkdir -p /opt/stacks/nebula-sync
 cd /opt/stacks/nebula-sync
-docker pull ghcr.io/lovelaze/nebula-sync:latest # pre-load the container
 nano compose.yml
+nano .env
 ```
 
 Inside of our `compose.yml` paste:
 
 {{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/nebula-sync/compose.yml" "yaml" %}}
+
+Inside of our `.env` paste:
+
+{{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/nebula-sync/sample.env" "yaml" %}}

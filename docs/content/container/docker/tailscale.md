@@ -18,8 +18,13 @@ Create a new directory for Tailscale and navigate into it.
 mkdir -p /opt/stacks/tailscale
 cd /opt/stacks/tailscale
 nano compose.yml
+nano .env
 ```
 
 Inside of our `compose.yml` paste:
 
 {{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/tailscale/compose.yml" "yaml" %}}
+
+Inside of our `.env` paste:
+
+{{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/tailscale/sample.env" "yaml" %}}

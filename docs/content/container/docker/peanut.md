@@ -18,8 +18,13 @@ Create a new directory for PeaNUT and navigate into it.
 mkdir -p /opt/stacks/peanut
 cd /opt/stacks/peanut
 nano compose.yml
+nano .env
 ```
 
 Inside of our `compose.yml` paste:
 
 {{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/peanut/compose.yml" "yaml" %}}
+
+Inside of our `.env` paste:
+
+{{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/peanut/sample.env" "yaml" %}}

@@ -18,8 +18,13 @@ Create a new directory for Speedtest and navigate into it.
 mkdir -p /opt/stacks/speedtest
 cd /opt/stacks/speedtest
 nano compose.yml
+nano .env
 ```
 
 Inside of our `compose.yml` paste:
 
 {{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/speedtest/compose.yml" "yaml" %}}
+
+Inside of our `.env` paste:
+
+{{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/speedtest/sample.env" "yaml" %}}

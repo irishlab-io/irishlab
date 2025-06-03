@@ -21,8 +21,13 @@ touch opt/stacks/traefik/data/acme.json
 chmod 0600 opt/stacks/traefik/data/acme.json
 cd opt/stacks/traefik
 nano compose.yml
+nano .env
 ```
 
 Inside of our `compose.yml` paste:
 
 {{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/traefik/compose.yml" "yaml" %}}
+
+Inside of our `.env` paste:
+
+{{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/traefik/sample.env" "yaml" %}}

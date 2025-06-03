@@ -18,8 +18,13 @@ Create a new directory for Pi-Hole and navigate into it.
 mkdir -p /opt/stacks/pihole
 cd /opt/stacks/pihole
 nano compose.yml
+nano .env
 ```
 
 Inside of our `compose.yml` paste:
 
 {{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/pihole/compose.yml" "yaml" %}}
+
+Inside of our `.env` paste:
+
+{{% include-remote-mdsnippet "https://raw.githubusercontent.com/irishlab-io/irishlab/refs/heads/main/docker/pihole/sample.env" "yaml" %}}
