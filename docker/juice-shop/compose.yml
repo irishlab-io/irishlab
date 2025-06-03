@@ -12,7 +12,7 @@ networks: # docker network create proxy
 services:
   whoami:
     container_name: whoami
-    image: docker.io/traefik/whoami:v1.10
+    image: docker.io/traefik/whoami:v1.11
     restart: unless-stopped
     networks:
       - proxy

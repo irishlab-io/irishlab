@@ -12,7 +12,7 @@ networks: # docker network create proxy
 services:
   pihole:
     container_name: pihole
-    image: ghcr.io/pi-hole/pihole:2025.04.0
+    image: ghcr.io/pi-hole/pihole:2025.05.1
     restart: unless-stopped
     networks:
       - proxy

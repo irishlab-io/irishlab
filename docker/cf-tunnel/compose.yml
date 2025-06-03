@@ -12,7 +12,7 @@ networks: # docker network create proxy
 services:
   tunnel:
     container_name: cloudflared-tunnel
-    image: cloudflare/cloudflared:2025.4.0
+    image: cloudflare/cloudflared:2025.5.0
     restart: unless-stopped
     networks:
       - proxy

@@ -4,7 +4,7 @@ name: peanut
 services:
   peanut:
     container_name: peanut
-    image: brandawg93/peanut:5.7.2
+    image: brandawg93/peanut:5.7.5
     restart: unless-stopped
     volumes:
       - "./config:/config"

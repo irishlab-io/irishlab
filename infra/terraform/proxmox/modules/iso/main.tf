@@ -2,7 +2,7 @@ terraform {
   required_providers {
     dns = {
       source  = "hashicorp/dns"
-      version = "3.4.2"
+      version = "3.4.3"
     }
     proxmox = {
       source  = "Telmate/proxmox"
@@ -10,7 +10,7 @@ terraform {
     }
     random = {
       source  = "hashicorp/random"
-      version = "3.7.1"
+      version = "3.7.2"
     }
   }
 }
