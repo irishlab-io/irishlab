@@ -4,7 +4,7 @@ name: tailscale
 services:
   tailscale:
     container_name: tailscale
-    image: ghcr.io/tailscale/tailscale:v1.82.0
+    image: ghcr.io/tailscale/tailscale:v1.84.0
     restart: unless-stopped
     env_file: .env
     volumes:
