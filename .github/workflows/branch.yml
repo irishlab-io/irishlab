@@ -1,9 +1,15 @@
 ---
-name: CI - Cron
+name: CI - Branches
 
 on: # yamllint disable-line rule:truthy
-  schedule:
-    - cron: '0 */6 * * *'
+  push:
+    branches:
+      - dev
+      - feat/*
+      - fix/*
+      - rel/*
+    paths-ignore:
+      - 'README.md'
   workflow_dispatch:
 
 concurrency:
@@ -12,13 +18,7 @@ concurrency:
 
 jobs:
 
-  pre-commit:
-    name: Call Pre-Commit run
-    uses: irishlab-io/.github/.github/workflows/reusable-pre-commit.yml@main
-
   secret:
-    needs:
-      - pre-commit
     name: Call Secret Scanning
     uses: irishlab-io/.github/.github/workflows/reusable-secret.yml@main
     secrets: inherit

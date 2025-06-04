@@ -1,1 +1,56 @@
 ---
+- Network:
+    - Omada:
+        id: col-big
+        icon: omada.svg
+        description: Network Controller
+        href: "{{HOMEPAGE_VAR_OMADA_URL}}"
+        ping: "{{HOMEPAGE_VAR_OMADA_URL}}"
+        widget:
+          type: omada
+          url: "{{HOMEPAGE_VAR_OMADA_URL}}"
+          username: "{{HOMEPAGE_VAR_OMADA_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_OMADA_PASSWORD}}"
+          site: "{{HOMEPAGE_VAR_OMADA_SITE}}"
+    - Pi-Hole:
+        id: col-big
+        icon: pi-hole.svg
+        description: DNS Server
+        href: "{{HOMEPAGE_VAR_PIHOLE_URL}}"
+        ping: "{{HOMEPAGE_VAR_PIHOLE_URL}}"
+        widget:
+          type: pihole
+          version: 6
+          url: "{{HOMEPAGE_VAR_PIHOLE_URL}}"
+          key: "{{HOMEPAGE_VAR_PIHOLE_PASSWORD}}"
+    - Speedtest:
+        id: col-big
+        icon: speedtest-tracker.png
+        description: Need for speed
+        href: "{{HOMEPAGE_VAR_SPEEDTEST_URL}}"
+        ping: "{{HOMEPAGE_VAR_SPEEDTEST_URL}}"
+        widget:
+          type: speedtest
+          version: 2
+          url: "{{HOMEPAGE_VAR_SPEEDTEST_URL}}"
+          key: "{{HOMEPAGE_VAR_SPEEDTEST_KEY}}"
+          bitratePrecision: 0
+    - ISP:
+        id: col-big
+        icon: flathub.png
+        ping: 1.1.1.1
+        widget:
+          type: customapi
+          url: http://ip-api.com/json
+          refreshInterval: 10000 # optional - in milliseconds, defaults to 10s
+          method: GET
+          mappings:
+            - field: 'query'
+              label: WAN IP
+              format: text
+            - field: 'regionName'
+              label: Region
+              format: text
+            - field: 'country'
+              label: Country
+              format: text

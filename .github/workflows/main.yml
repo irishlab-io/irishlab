@@ -1,5 +1,5 @@
 ---
-name: Continous Integration - Main
+name: CI - Main
 
 on: # yamllint disable-line rule:truthy
   push:
@@ -14,17 +14,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+
+  pre-commit:
+    name: Call Pre-Commit run
+    uses: irishlab-io/.github/.github/workflows/reusable-pre-commit.yml@main
+
   secret:
+    needs:
+      - pre-commit
     name: Call Secret Scanning
-    uses: irishlab-io/admin/.github/workflows/reusable-secret.yml@main
+    uses: irishlab-io/.github/.github/workflows/reusable-secret.yml@main
     secrets: inherit
 
   ansible-lint:
-    name: Call Ansible-Lint
-    uses: irishlab-io/admin/.github/workflows/reusable-ansible-lint.yml@main
-
     needs:
       - secret
+    name: Call Ansible-Lint
+    uses: irishlab-io/.github/.github/workflows/reusable-ansible-lint.yml@main
 
     with:
       configuration_file: "-c ./.config/.ansible-lint.yml"

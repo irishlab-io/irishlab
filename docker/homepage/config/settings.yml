@@ -32,7 +32,6 @@ layout:
     rows: 1
     columns: 3
     icon: proxmox.png
-    initiallyCollapsed: true
 
   Media:
     style: row
