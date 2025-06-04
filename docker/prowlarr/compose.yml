@@ -12,7 +12,7 @@ networks: # docker network create proxy
 services:
   prowlarr:
     container_name: prowlarr
-    image: lscr.io/linuxserver/prowlarr:1.36.3
+    image: lscr.io/linuxserver/prowlarr:1.37.0
     restart: unless-stopped
     networks:
       - proxy
