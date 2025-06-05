@@ -19,6 +19,10 @@ jobs:
     name: Call Pre-Commit run
     uses: irishlab-io/.github/.github/workflows/reusable-pre-commit.yml@main
 
+    with:
+      configuration_file: "-c ./.config/.pre-commit.yml"
+      skips: "actionlint,ansible-lint,ggshield"
+
   secret:
     needs:
       - pre-commit
